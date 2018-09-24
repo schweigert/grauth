@@ -1,0 +1,7 @@
+<h1>
+  Bem Vindo,
+  <%= @user.name.present? ? @user.name : 'sem nome' %>
+</h1>
+<%= link_to(destroy_user_session_path, method: :delete) do %>
+Sair
+<% end %>
