@@ -3,3 +3,4 @@ log/*
 tmp/*
 storage/*
 .env
+config/database.yml

@@ -2,6 +2,21 @@
   Bem Vindo,
   <%= @user.name.present? ? @user.name : 'sem nome' %>
 </h1>
+
 <%= link_to(destroy_user_session_path, method: :delete) do %>
-Sair
+  Sair
 <% end %>
+
+hehe
+<%= form_for @note, url: notes_path do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :body %>
+  <%= f.text_area :body, size: '60x12' %>
+
+  <br>
+  <%= f.submit %>
+<% end %>
+
+<%= render partial: 'note', collection: @notes %>

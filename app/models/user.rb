@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
+  has_many :notes
+
  def self.from_omniauth(access_token)
    data_email = access_token.info['email']
    data_name = access_token.info['name']
